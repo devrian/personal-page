@@ -1414,9 +1414,11 @@ color: transparent;
     gap: 1rem;
 }
 
-.scroller__inner h4 {
-    margin-right: 30px;
+.scroller__inner img {
+    margin-right: 60px;
 	margin-bottom: 0;
+    width: 50px;
+    height: 50px;
 }
 
 .scroller[data-animated="true"] {
