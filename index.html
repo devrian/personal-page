@@ -236,6 +236,7 @@
                                     </div>
                                     <div class="content">
                                         <span class="years">March 2022 - Present</span>
+                                        <span class="expp"></span>
                                         <h4>PT SICEPAT EKSPRES INDONESIA - Jakarta, Indonesia</h4>
                                         <span class="company"> Backend Engineer </span>
                                     </div>
@@ -248,6 +249,7 @@
                                     </div>
                                     <div class="content">
                                         <span class="years">July 2021 - March 2022</span>
+                                        <span class="exp3"></span>
                                         <h4>PT Keluarga Satu Nol (Rebelworks) - Jakarta, Indonesia</h4>
                                         <span class="company">Backend Engineer</span>
                                     </div>
@@ -260,6 +262,7 @@
                                     </div>
                                     <div class="content">
                                         <span class="years">August 2020 - July 2021</span>
+                                        <span class="exp2"></span>
                                         <h4>PT Sempoa Prima Teknologi - Jakarta, Indonesia</h4>
                                         <span class="company">Full-stack Engineer</span>
                                     </div>
@@ -271,7 +274,8 @@
                                         </a>
                                     </div>
                                     <div class="content">
-                                        <span class="years">February 2018 - August 20201</span>
+                                        <span class="years">February 2018 - August 2020</span>
+                                        <span class="exp1"></span>
                                         <h4>PT Docotel Teknologi Informasi - Jakarta, Indonesia</h4>
                                         <span class="company">Full-stack Engineer</span>
                                     </div>
@@ -964,6 +968,35 @@
 
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        function calculateDuration(startYear, startMonth, endYear = null, endMonth = null) {
+            const startDate = new Date(startYear, startMonth - 1);
+            const endDate = endYear && endMonth 
+                ? new Date(endYear, endMonth - 1) 
+                : new Date();
+
+            let totalMonths = (
+                endDate.getFullYear() - startDate.getFullYear()) * 12 
+                + (endDate.getMonth() - startDate.getMonth()
+            );
+
+            totalMonths += 1;
+
+            const years = Math.floor(totalMonths / 12);
+            const months = totalMonths % 12;
+
+            return years > 0 
+                ? `${years} Year${years > 1 ? 's' : ''}${months > 0 ? ` ${months} Month${months > 1 ? 's' : ''}` : ''}`
+                : `${months} Month${months > 1 ? 's' : ''}`;
+        }
+
+        // Example usage
+        document.querySelector('.expp').textContent = `(${calculateDuration(2022, 3)})`;
+        document.querySelector('.exp3').textContent = `(${calculateDuration(2021, 7, 2022, 3)})`;
+        document.querySelector('.exp2').textContent = `(${calculateDuration(2020, 8, 2021, 7)})`;
+        document.querySelector('.exp1').textContent = `(${calculateDuration(2018, 2, 2020, 8)})`;
     </script>
 </body>
 
