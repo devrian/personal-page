@@ -1,2 +1,2 @@
 # personal-page
-Profile Perdonal Page Portofolio
+Profile Page Portofolio
